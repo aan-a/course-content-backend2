@@ -8,7 +8,7 @@ app = Flask(__name__)
 def load_modules():
     with open("modules.json", "r") as f:
         return json.load(f)
-app.route("/modules", modules=["GET"])
+app.route("/modules", methods=["GET"])
 def get_modules():
     modules=load_modules()
     return jsonify(modules)
